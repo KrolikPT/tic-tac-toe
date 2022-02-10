@@ -115,7 +115,7 @@ def main():
         print(display_board(tabuleiro))
 
         if turn == "P1":
-            choice = input("Player 1 - Choose a position (1-9): ")
+            choice = input("\nPlayer 1 - Choose a position (1-9): ")
 
             if choice == "1" and tabuleiro["row_1"][0] == "1":
                 tabuleiro["row_1"][0] = player_1
@@ -136,7 +136,7 @@ def main():
             elif choice == "9" and tabuleiro["row_3"][2] == "9":
                 tabuleiro["row_3"][2] = player_1
             else:
-                print("Invalid choose!")
+                print("\nInvalid choose!")
                 input()
                 continue
 
@@ -144,7 +144,7 @@ def main():
                 
             turn = "P2"
         else:
-            choice = input("Player 2 - Choose a position (1-9): ")
+            choice = input("\nPlayer 2 - Choose a position (1-9): ")
             
             if choice == "1" and tabuleiro["row_1"][0] == "1":
                 tabuleiro["row_1"][0] = player_2
@@ -165,7 +165,7 @@ def main():
             elif choice == "9" and tabuleiro["row_3"][2] == "9":
                 tabuleiro["row_3"][2] = player_2
             else:
-                print("Invalid choose!")
+                print("\nInvalid choose!")
                 input()
                 continue
 
