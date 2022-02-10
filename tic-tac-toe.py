@@ -93,10 +93,7 @@ def check_win(tabuleiro, turn):
 # Show boardgame
 def display_board(tabuleiro):
 
-        try:
-            os.system("cls")
-        except Exception as e:
-            os.system("clear")
+        os.system("@cls||clear")
 
         tabuleiro_jogo = pd.DataFrame(tabuleiro)
         return tabulate.tabulate(tabuleiro_jogo, tablefmt="grid", showindex=False)
