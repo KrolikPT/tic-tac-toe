@@ -75,24 +75,28 @@ def check_win(tabuleiro, turn):
     # Victory message
     if check and winner == "P1":    
         print(display_board(tabuleiro))
-        print("\nO Player 1 venceu!!!")  
+        print("\nPlayer 1 wins!!!")  
         input()
         exit()
     elif check and winner == "P2":
         print(display_board(tabuleiro))
-        print("\nO Player 2 venceu!!!")
+        print("\nPlayer 2 wins!!!")
         input()
         exit()
     elif check and winner == "DRAW":
         print(display_board(tabuleiro))
-        print("\nEMPATE!!!")
+        print("\nDRAW!!!")
         input()
         exit()
 
 
 # Show boardgame
 def display_board(tabuleiro):
-        os.system("cls")
+
+        try:
+            os.system("cls")
+        except Exception as e:
+            os.system("clear")
 
         tabuleiro_jogo = pd.DataFrame(tabuleiro)
         return tabulate.tabulate(tabuleiro_jogo, tablefmt="grid", showindex=False)
@@ -114,7 +118,7 @@ def main():
         print(display_board(tabuleiro))
 
         if turn == "P1":
-            choice = input("Player 1 - Escolha a posição: ")
+            choice = input("Player 1 - Choose a position (1-9): ")
 
             if choice == "1" and tabuleiro["row_1"][0] == "1":
                 tabuleiro["row_1"][0] = player_1
@@ -135,7 +139,7 @@ def main():
             elif choice == "9" and tabuleiro["row_3"][2] == "9":
                 tabuleiro["row_3"][2] = player_1
             else:
-                print("Escolha inválida!")
+                print("Invalid choose!")
                 input()
                 continue
 
@@ -143,7 +147,7 @@ def main():
                 
             turn = "P2"
         else:
-            choice = input("Player 2 - Escolha a posição: ")
+            choice = input("Player 2 - Choose a position (1-9): ")
             
             if choice == "1" and tabuleiro["row_1"][0] == "1":
                 tabuleiro["row_1"][0] = player_2
@@ -164,7 +168,7 @@ def main():
             elif choice == "9" and tabuleiro["row_3"][2] == "9":
                 tabuleiro["row_3"][2] = player_2
             else:
-                print("Escolha inválida!")
+                print("Invalid choose!")
                 input()
                 continue
 
