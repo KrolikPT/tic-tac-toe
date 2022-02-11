@@ -1,31 +1,22 @@
 import tabulate 
 import pandas as pd
 import os
-import numpy as np
 
 endgame = False
 player_1 =  "\033[1;32mX\033[0m"
 player_2 = "\033[1;31mO\033[0m"
 
 
-def check_win(tabuleiro, turn):
+def check_win(tabuleiro, turn, plays):
 
     check = False
     winner = ""
 
     # Check draw
-    if (tabuleiro["row_1"][0] != "1" and 
-        tabuleiro["row_1"][1] != "4" and
-        tabuleiro["row_1"][2] != "7" and
-        tabuleiro["row_2"][0] != "2" and
-        tabuleiro["row_2"][1] != "5" and
-        tabuleiro["row_2"][2] != "8" and
-        tabuleiro["row_3"][0] != "3" and
-        tabuleiro["row_3"][1] != "6" and
-        tabuleiro["row_3"][2] != "9"):
-
+    if plays == 9:
         check = True
         winner = "DRAW"
+
 
     if turn == "P1":
         # Win possibilities
@@ -106,6 +97,7 @@ def display_board(tabuleiro):
 def main():
 
     turn = "P1"
+    plays = 0
 
     tabuleiro = {
         "row_1": ["1", "4", "7"],
@@ -144,7 +136,8 @@ def main():
                 input()
                 continue
 
-            check_win(tabuleiro, turn)
+            plays += 1
+            check_win(tabuleiro, turn, plays)
                 
             turn = "P2"
         else:
@@ -173,10 +166,8 @@ def main():
                 input()
                 continue
 
-            if check_win(tabuleiro, turn):
-                print(display_board(tabuleiro))
-                input()
-                exit()
+            plays += 1
+            check_win(tabuleiro, turn, plays)
 
             turn = "P1"
 
