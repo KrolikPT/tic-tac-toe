@@ -102,7 +102,6 @@ def main():
         "row_2": ["2", "5", "8"],
         "row_3": ["3", "6", "9"]
     }
-
     choice = ""
 
     while endgame == False:
