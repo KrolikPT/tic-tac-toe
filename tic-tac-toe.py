@@ -97,7 +97,6 @@ def main():
 
     turn = "P1"
     plays = 0
-
     tabuleiro = {
         "row_1": ["1", "4", "7"],
         "row_2": ["2", "5", "8"],
