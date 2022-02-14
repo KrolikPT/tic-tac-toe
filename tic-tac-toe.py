@@ -136,8 +136,7 @@ def main():
                 continue
 
             plays += 1
-            check_win(tabuleiro, turn, plays)
-                
+            check_win(tabuleiro, turn, plays)               
             turn = "P2"
         else:
             choice = input("\nPlayer 2 - Choose a position (1-9): ")
