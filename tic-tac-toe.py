@@ -17,7 +17,6 @@ def check_win(tabuleiro, turn, plays):
         check = True
         winner = "DRAW"
 
-
     if turn == "P1":
         # Win possibilities
             # 1 2 3
