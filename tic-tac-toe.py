@@ -83,14 +83,14 @@ def check_win(tabuleiro, turn, plays):
 # Show boardgame
 def display_board(tabuleiro):
 
-        os.system("@cls||clear")
+    os.system("@cls||clear")
+    
+    print("*************************************************************")
+    print("************************ TIC TAC TOE ************************")
+    print("*************************************************************\n")
 
-        print("*************************************************************")
-        print("************************ TIC TAC TOE ************************")
-        print("*************************************************************\n")
-
-        tabuleiro_jogo = pd.DataFrame(tabuleiro)
-        return tabulate.tabulate(tabuleiro_jogo, tablefmt="grid", showindex=False)
+    tabuleiro_jogo = pd.DataFrame(tabuleiro)
+    return tabulate.tabulate(tabuleiro_jogo, tablefmt="grid", showindex=False)
 
 
 def main():
