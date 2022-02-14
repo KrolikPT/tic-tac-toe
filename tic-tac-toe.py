@@ -167,7 +167,6 @@ def main():
 
             plays += 1
             check_win(tabuleiro, turn, plays)
-
             turn = "P1"
 
 
