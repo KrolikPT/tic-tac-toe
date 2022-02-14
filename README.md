@@ -1,5 +1,4 @@
 # Tic Tac Toe Game
 
 ## Requirements
-pip install tabulate<br />
-pip install pandas
+pip install -r requirements.txt
